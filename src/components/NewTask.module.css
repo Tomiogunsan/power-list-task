@@ -1,0 +1,28 @@
+.form_input {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-self: center;
+    gap: .2rem;
+}
+
+.form_input input{
+    border: 2px solid rgb(190, 21, 209);
+    padding: 5px 10px 5px 50px;
+    font-size: 18px;
+    line-height: 30px;
+    outline: 0;
+    width: 100%;
+    border-radius: 8px;
+    
+} 
+
+
+
+.form_input button{
+    border: 2px solid #eee;
+    border-radius: 8px;
+    background: rgb(190, 21, 209);
+    color: #eee
+
+}
