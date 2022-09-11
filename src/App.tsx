@@ -1,4 +1,4 @@
-import  {useState} from 'react';
+import  {useEffect, useState} from 'react';
 
 import Tasks from './components/Tasks';
 import Task from './components/models/Task';
@@ -6,14 +6,22 @@ import NewTask from './components/NewTask';
 import Heading from './components/Date';
 
 function App() {
- const [task, setTasks] = useState<Task[]>([])
-
-
+  // @ts-ignore
+  const initialState = JSON.parse(localStorage.getItem('task')) || []
+ const [task, setTasks] = useState<Task[]>(initialState)
+ 
+ useEffect(() => {
+  const temp = JSON.stringify(task);
+  // const taskId: string = new Date().toISOString()
+  localStorage.setItem( 'task', temp)
+ }, [task])
+ 
+    
  
  const addToTask = (taskText: string) => {
    const newTask = new Task(taskText)
 
-    setTasks((prevTask) => {return prevTask.concat(newTask)})
+    setTasks((prevTask) => prevTask.concat(newTask))
   }
 
   const removeTaskHandler = (taskId: string) => {

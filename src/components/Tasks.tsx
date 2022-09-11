@@ -18,7 +18,7 @@ const Tasks: React.FC<{tasks: Task[]; onRemoveTask: (id: string) => void}> = (pr
             <AiOutlineClose onClick={props.onRemoveTask.bind(null, task.id)} className={classes.icon}/>
            </div>))} 
         
-
+            
         
         </Fragment>
     )
